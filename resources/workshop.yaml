@@ -1,0 +1,20 @@
+apiVersion: training.eduk8s.io/v1alpha2
+kind: Workshop
+metadata:
+  name: lab-k8s-fundamentals
+spec:
+  title: lab-k8s-fundamentals
+  description: An interactive workshop on Kubernetes fundamentals.
+  content:
+    files: imgpkg+http://registry.eduk8s.svc.cluster.local:5001/lab-k8s-fundamentals-files:latest
+  session:
+    namespaces:
+      budget: small
+    applications:
+      terminal:
+        enabled: true
+        layout: split
+      console:
+        enabled: true
+      editor:
+        enabled: true

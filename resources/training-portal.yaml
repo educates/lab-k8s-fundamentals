@@ -1,0 +1,15 @@
+apiVersion: training.eduk8s.io/v1alpha1
+kind: TrainingPortal
+metadata:
+  name: lab-k8s-fundamentals
+spec:
+  portal:
+    registration:
+      type: anonymous
+    updates:
+      workshop: true
+  workshops:
+  - name: lab-k8s-fundamentals
+    capacity: 1
+    expires: 60m
+    orphaned: 5m
