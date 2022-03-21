@@ -45,10 +45,10 @@ This continual process whereby Kubernetes will ensure that the number of instanc
 You can simulate this scenario by deleting one of the `pods`. To see what happens, first run in one terminal:
 
 ```execute-1
-kubectl get pods -l app=blog --watch
+watch kubectl get pods -l app=blog
 ```
 
-The `--watch` option to `kubectl get pods` says to monitor the pods over time and show any changes.
+This will periodically run `kubectl get pods` so we can monitor the pods over time and show any changes.
 
 Now from another terminal delete one of the `pods`.
 
@@ -58,7 +58,7 @@ kubectl delete `kubectl get pod -l app=blog -o name | head -1`
 
 You should see the `pod` which was targeted being marked as `Terminating` and it will be removed. Because though the desired number of replicas is 2, a new instance of your application will be automatically started to replace it.
 
-When complete, interrupt the `kubectl get --watch` command to stop it.
+When complete, interrupt the watch command to stop it.
 
 ```terminal:interrupt
 ```

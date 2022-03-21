@@ -25,7 +25,7 @@ persistentvolumeclaim/blog-database created (dry run)
 deployment.apps/blog-db created (dry run)
 ```
 
-The `kubectl apply` command in this case is what is used to create resources from a configuration file, or set of files contained in a directory. We used the `--dry-run=client` option, which tells us what objects would be created without creating any of the objects in the cluster. The `--dry-run` option also validates the resource definitions and will warn you if you they contain errors.
+The `kubectl apply` command in this case is what is used to create resources from a configuration file, or set of files contained in a directory. We used the `--dry-run=client` option, which tells us what objects would be created without creating any of the objects in the cluster. The `--dry-run` option also validates the resource definitions and will warn you if they contain errors.
 
 If you are ever uncertain about what a command does, or what options it accepts, you can run it with the `--help` option.
 

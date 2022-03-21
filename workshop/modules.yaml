@@ -34,8 +34,6 @@ modules:
         name: Setting up Database
     exercises/16-persistent-volumes:
         name: Persistent Volumes
-    # exercises/17-application-health:
-    #     name: Application Health
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

@@ -3,7 +3,7 @@ To gain access to the container in which an instance of an application is runnin
 As with logging, you need to specify the particular `pod` you want to access, and if there are multiple containers running in the `pod`, specify which container using the `-c` or `--container` option.
 
 ```execute
-kubectl exec $POD env
+kubectl exec $POD -- env
 ```
 
 If you want to run an interactive terminal session, you need to ensure you use the `-i` or `--stdin` option, and the `-t` or `--tty` option.

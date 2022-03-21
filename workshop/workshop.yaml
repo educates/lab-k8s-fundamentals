@@ -19,5 +19,4 @@ modules:
     - exercises/14-linking-the-database
     - exercises/15-setting-up-database
     - exercises/16-persistent-volumes
-    - exercises/17-application-health
     - workshop-summary
