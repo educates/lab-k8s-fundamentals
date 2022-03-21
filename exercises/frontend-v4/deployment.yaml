@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: blog
-        image: quay.io/eduk8s-labs/app-k8s-fundamentals-frontend:latest
+        image: ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:1.0
         ports:
         - containerPort: 8080
         env:

@@ -42,7 +42,7 @@ In this you will see that the `spec` section contains:
           pod-template-hash: 7b747746cc
       spec:
         containers:
-        - image: quay.io/eduk8s-labs/app-k8s-fundamentals-frontend:latest
+        - image: ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:1.0
           imagePullPolicy: Always
           name: blog
           ports:
