@@ -5,6 +5,7 @@
 .gitignore
 Dockerfile
 Makefile
+CREDITS.md
 LICENSE
 README.md
 resources

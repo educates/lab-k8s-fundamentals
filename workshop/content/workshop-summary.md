@@ -1,1 +1,13 @@
-This is the last page of the workshop. Include in this page a summary of the workshop and any links to resources relevant to the workshop. This ensures anyone doing the workshop has material they can research later to learn more.
+In this workshop you have had an opportunity to get hands on with Kubernetes. In the workshop you deployed an application consisting of a front end web application implementing a blog site, using a back end PostrgreSQL database for storage of posts. For storage of images attached to posts, a persistent volume was used.
+
+For general information on Kubernetes see:
+
+* https://kubernetes.io/
+
+If you want to try Kubernetes on your own computer, see Tanzu Community Edition:
+
+* https://tanzucommunityedition.io/docs/latest/getting-started-unmanaged/
+
+or Minikube:
+
+* https://minikube.sigs.k8s.io/docs/start/

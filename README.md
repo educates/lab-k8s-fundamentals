@@ -1,4 +1,4 @@
-lab-k8s-fundamentals
-====================
+Lab - Kubernetes Fundamentals
+=============================
 
-An interactive workshop on Kubernetes fundamentals.
+This repository holds source files for a workshop on Kubernetes fundamentals.
