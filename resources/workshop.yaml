@@ -6,7 +6,7 @@ spec:
   title: Kubernetes Fundamentals
   description: An interactive workshop on Kubernetes fundamentals.
   content:
-    files: imgpkg+http://registry.eduk8s.svc.cluster.local:5001/lab-k8s-fundamentals-files:latest
+    files: imgpkg+http://registry.default.svc.cluster.local:5001/lab-k8s-fundamentals-files:latest
   session:
     namespaces:
       budget: medium
