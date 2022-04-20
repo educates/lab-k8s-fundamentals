@@ -15,7 +15,7 @@ publish-files:
 deploy-workshop:
 	kubectl apply -f resources/workshop.yaml
 	kubectl apply -f resources/training-portal.yaml
-	STATUS=1; ATTEMPTS=0; ROLLOUT_STATUS_CMD="kubectl rollout status deployment/eduk8s-portal -n $(WORKSHOP_NAME)-ui"; until [ $$STATUS -eq 0 ] || $$ROLLOUT_STATUS_CMD || [ $$ATTEMPTS -eq 5 ]; do sleep 5; $$ROLLOUT_STATUS_CMD; STATUS=$$?; ATTEMPTS=$$((attempts + 1)); done
+	STATUS=1; ATTEMPTS=0; ROLLOUT_STATUS_CMD="kubectl rollout status deployment/training-portal -n $(WORKSHOP_NAME)-ui"; until [ $$STATUS -eq 0 ] || $$ROLLOUT_STATUS_CMD || [ $$ATTEMPTS -eq 5 ]; do sleep 5; $$ROLLOUT_STATUS_CMD; STATUS=$$?; ATTEMPTS=$$((attempts + 1)); done
 
 update-workshop:
 	kubectl apply -f resources/workshop.yaml
@@ -25,4 +25,4 @@ delete-workshop:
 	kubectl delete -f resources/workshop.yaml
 
 open-workshop:
-	URL=`kubectl get trainingportal/$(WORKSHOP_NAME) -o go-template={{.status.eduk8s.url}}`; (test -x /usr/bin/xdg-open && xdg-open $$URL) || (test -x /usr/bin/open && open $$URL) || true
+	URL=`kubectl get trainingportal/$(WORKSHOP_NAME) -o go-template={{.status.educates.url}}`; (test -x /usr/bin/xdg-open && xdg-open $$URL) || (test -x /usr/bin/open && open $$URL) || true

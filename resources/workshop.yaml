@@ -5,8 +5,15 @@ metadata:
 spec:
   title: Kubernetes Fundamentals
   description: An interactive workshop on Kubernetes fundamentals.
-  content:
-    files: imgpkg+http://registry.default.svc.cluster.local:5001/lab-k8s-fundamentals-files:latest
+  workshop:
+    image: $(image_repository)/lab-k8s-fundamentals-image:latest
+    files:
+    - image:
+        url: $(image_repository)/lab-k8s-fundamentals-files:latest
+      includePaths:
+      - /workshop/**
+      - /exercises/**
+      - /README.md
   session:
     namespaces:
       budget: medium
@@ -18,3 +25,7 @@ spec:
         enabled: true
       editor:
         enabled: true
+      slides:
+        enabled: true
+        reveal.js:
+          version: 3.x
