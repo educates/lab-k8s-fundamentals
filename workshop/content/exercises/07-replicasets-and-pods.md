@@ -15,6 +15,8 @@ deployment.apps/blog
 replicaset.apps/blog-6b8999855c
 ```
 
+If you see any errors about not being able to list resource types, this is because your user doesn't have the access roles which allow making queries about the resource type. This might occur where authors of Kubernetes operators have not followed best practices, and have added custom resources types to the `all` alias. This shouldn't be done as the `all` alias should only be used by Kubernetes core itself and not third party developers. This is another reason why it is better to list the specific resource types you are interested in.
+
 Although you only created the `deployment`, this has resulted in the creation of additional resources for `replicaset` and `pod`.
 
 This is because `deployment` acts as a template for the creation of a `replicaset`. A `replicaset` in turn acts as a template for the creation of the `pods`. It is the `pods` which represent the instances of your application. In this case, because the number of replicas has been set to 2, there are 2 pods.
