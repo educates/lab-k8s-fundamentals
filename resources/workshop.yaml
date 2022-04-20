@@ -6,7 +6,6 @@ spec:
   title: Kubernetes Fundamentals
   description: An interactive workshop on Kubernetes fundamentals.
   workshop:
-    image: $(image_repository)/lab-k8s-fundamentals-image:latest
     files:
     - image:
         url: $(image_repository)/lab-k8s-fundamentals-files:latest
