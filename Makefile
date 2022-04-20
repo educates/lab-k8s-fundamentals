@@ -14,14 +14,14 @@ publish-files:
 
 deploy-workshop:
 	kubectl apply -f resources/workshop.yaml
-	kubectl apply -f resources/training-portal.yaml
+	kubectl apply -f resources/trainingportal.yaml
 	STATUS=1; ATTEMPTS=0; ROLLOUT_STATUS_CMD="kubectl rollout status deployment/training-portal -n $(WORKSHOP_NAME)-ui"; until [ $$STATUS -eq 0 ] || $$ROLLOUT_STATUS_CMD || [ $$ATTEMPTS -eq 5 ]; do sleep 5; $$ROLLOUT_STATUS_CMD; STATUS=$$?; ATTEMPTS=$$((attempts + 1)); done
 
 update-workshop:
 	kubectl apply -f resources/workshop.yaml
 
 delete-workshop:
-	kubectl delete -f resources/training-portal.yaml --cascade=foreground
+	kubectl delete -f resources/trainingportal.yaml --cascade=foreground
 	kubectl delete -f resources/workshop.yaml
 
 open-workshop:
