@@ -57,7 +57,7 @@ status: {}
 
 Note that nothing has been created at this point as when we ran `kubectl create deployment` we used the `--dry-run` option, it therefore only showed what it would create.
 
-Although `kubectl create deployment` could be used, it is a bare bones skeleton for a `deployment` object, even so, it is enough to get us started.
+Although `kubectl create deployment` could be used, it is a bare bones skeleton for a `deployment` object, even so, it is often enough to get started.
 
 One could now re-run the command and leave off the `--dry-run` option and it would create the resource. To make subsequent changes to the resource definition, one could then edit it in place using the `kubectl edit` command.
 
@@ -92,3 +92,17 @@ Monitor progress of the deployment so you know when it has completed.
 ```execute
 kubectl rollout status deployment/blog
 ```
+
+Note that if you did look at the contents of `frontend-v1/deployment.yaml` you will find that what we used isn't exactly the same as what `kubectl create deployment` generated. This is because in this workshop environment, depending on how the Kubernetes cluster was setup, additional security configuration settings can be required otherwise the deployment will be rejected. The additional settings were part of the pod template specification and consisted of:
+
+```
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["ALL"]
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+```
+
+The reason for these settings is beyond the scope of this workshop, but is part of good container hygiene and states what privileges the container requires.
