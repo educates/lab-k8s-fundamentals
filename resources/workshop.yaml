@@ -11,11 +11,13 @@ spec:
         url: $(image_repository)/lab-k8s-fundamentals-files:latest
       includePaths:
       - /workshop/**
-      - /exercises/**
+      - /templates/**
       - /README.md
   session:
     namespaces:
       budget: medium
+      security:
+        policy: restricted
     applications:
       terminal:
         enabled: true
@@ -28,3 +30,5 @@ spec:
         enabled: true
         reveal.js:
           version: 3.x
+      git:
+        enabled: true

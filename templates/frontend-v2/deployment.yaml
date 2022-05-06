@@ -1,3 +1,6 @@
+#@ load("@ytt:data", "data")
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,7 +25,9 @@ spec:
           capabilities:
             drop: ["ALL"]
           runAsNonRoot: true
+          #@ if data.values.POLICY_ENGINE in ["pod-security-standards", "kyverno"]:
           seccompProfile:
             type: RuntimeDefault
+          #@ end
         ports:
         - containerPort: 8080

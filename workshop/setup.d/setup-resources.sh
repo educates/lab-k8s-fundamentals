@@ -1,7 +1,10 @@
 #!/bin/bash
 
-envsubst < exercises/frontend/ingress.yaml.in > exercises/frontend/ingress.yaml
+ytt -f templates \
+  -v SESSION_NAMESPACE=$SESSION_NAMESPACE \
+  -v INGRESS_DOMAIN=$INGRESS_DOMAIN \
+  -v POLICY_ENGINE=$POLICY_ENGINE \
+  --output-files exercises
 
-envsubst < exercises/frontend-v3/ingress.yaml.in > exercises/frontend-v3/ingress.yaml
-envsubst < exercises/frontend-v4/ingress.yaml.in > exercises/frontend-v4/ingress.yaml
-envsubst < exercises/frontend-v5/ingress.yaml.in > exercises/frontend-v5/ingress.yaml
+find exercises -type d -exec chmod 0755 {} \;
+find exercises -type f -exec chmod 0644 {} \;

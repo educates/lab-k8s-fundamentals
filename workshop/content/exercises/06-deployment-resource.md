@@ -101,8 +101,8 @@ Note that if you did look at the contents of `frontend-v1/deployment.yaml` you w
           capabilities:
             drop: ["ALL"]
           runAsNonRoot: true
-          seccompProfile:
-            type: RuntimeDefault
+          # seccompProfile:
+          #   type: RuntimeDefault
 ```
 
 The reason for these settings is beyond the scope of this workshop, but is part of good container hygiene and states what privileges the container requires.
