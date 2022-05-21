@@ -24,11 +24,7 @@ spec:
         layout: split
       console:
         enabled: true
-      editor:
-        enabled: true
       slides:
         enabled: true
         reveal.js:
           version: 3.x
-      git:
-        enabled: true
