@@ -17,6 +17,10 @@ spec:
       labels:
         app: blog
     spec:
+      securityContext:
+        runAsUser: 1001
+        fsGroup: 1
+        supplementalGroups: [1]
       affinity:
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:

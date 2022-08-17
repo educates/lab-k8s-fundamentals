@@ -46,6 +46,8 @@ spec:
       labels:
         app: blog
     spec:
+      securityContext:
+        runAsUser: 1001
       containers:
       - image: ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:1.0
         name: app-k8s-fundamentals-frontend
