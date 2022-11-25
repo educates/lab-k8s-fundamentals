@@ -5,7 +5,7 @@ dj-database-url==0.5.0
 Django==3.2.16
 idna==3.3
 mod-wsgi==4.9.3
-Pillow==9.0.1
+Pillow==9.3.0
 psycopg2==2.9.3
 pytz==2022.1
 requests==2.27.1
