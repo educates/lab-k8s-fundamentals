@@ -20,14 +20,20 @@ echo " -----> Current working directory."
 
 pwd
 
-# If necessaary create the media directory if persistent volume being used.
+# If necessary create the media directory if persistent volume being used.
 
-if [ -d /opt/app-root/data ]; then
-    if [ ! -d /opt/app-root/data/media/images ]; then
-        echo " -----> Creating directory for uploaded image files."
+if [ -d /opt/app-root/media ]; then
+    MEDIA_DIR=/opt/app-root/media
+elif [ -d /opt/app-root/data ]; then
+    MEDIA_DIR=/opt/app-root/data/media
+else
+    MEDIA_DIR=data/media
+fi
 
-        mkdir -p /opt/app-root/data/media/images
-    fi
+if [ ! -d $MEDIA_DIR/images ]; then
+    echo " -----> Creating directory for uploaded image files."
+
+    mkdir -p $MEDIA_DIR/images
 fi
 
 # Run the application specific deploy steps for this project. If an

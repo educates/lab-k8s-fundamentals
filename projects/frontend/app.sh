@@ -5,12 +5,20 @@ set -x
 PORT=${PORT:-8080}
 SSL_PORT=${SSL_PORT:-8443}
 
+if [ -d /opt/app-root/media ]; then
+    MEDIA_DIR=/opt/app-root/media
+elif [ -d /opt/app-root/data ]; then
+    MEDIA_DIR=/opt/app-root/data/media
+else
+    MEDIA_DIR=data/media
+fi
+
 ARGS=""
 
 ARGS="$ARGS --log-to-terminal"
 ARGS="$ARGS --port $PORT"
 ARGS="$ARGS --document-root htdocs"
-ARGS="$ARGS --url-alias /media media"
+ARGS="$ARGS --url-alias /media $MEDIA_DIR"
 
 if [ -f /opt/app-root/cert/tls.key ]; then
     ARGS="$ARGS --ssl-port $SSL_PORT"

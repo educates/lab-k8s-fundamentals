@@ -28,7 +28,15 @@ python manage.py collectstatic --noinput
 
 echo " -----> Creating directory for uploaded image files."
 
-mkdir -p media/images && chmod g+w media/images
+if [ -d /opt/app-root/media ]; then
+    MEDIA_DIR=/opt/app-root/media
+elif [ -d /opt/app-root/data ]; then
+    MEDIA_DIR=/opt/app-root/data/media
+else
+    MEDIA_DIR=data/media
+fi
+
+mkdir -p $MEDIA_DIR/images && chmod g+w $MEDIA_DIR/images
 
 # Remove the wheelhouse if it exists.
 

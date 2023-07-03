@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for frontend project.
 
@@ -20,7 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if os.path.isdir('/opt/app-root/data'):
     DATA_DIR = '/opt/app-root/data'
 else:
-    DATA_DIR = BASE_DIR
+    DATA_DIR = os.path.join(BASE_DIR, 'data')
+
+if os.path.isdir('/opt/app-root/media'):
+    MEDIA_DIR = '/opt/app-root/media'
+else:
+    MEDIA_DIR = os.path.join(DATA_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -188,7 +195,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+MEDIA_ROOT = MEDIA_DIR
 
 LOGGING = {
     'version': 1,

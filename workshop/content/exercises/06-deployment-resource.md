@@ -16,12 +16,12 @@ An alternative is to have `kubectl` create it for you. For a `deployment`, you c
 kubectl create deployment --help
 ```
 
-For the deployment of the front end web application, the container image we want to use is `ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:1.0`.
+For the deployment of the front end web application, the container image we want to use is `ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:2.0`.
 
 To see what `kubectl create deployment` would create for us run:
 
 ```execute
-kubectl create deployment blog --image ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:1.0 --port 8080 --replicas=2 --dry-run=client -o yaml
+kubectl create deployment blog --image ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:2.0 --port 8080 --replicas=2 --dry-run=client -o yaml
 ```
 
 This should yield:
@@ -49,7 +49,7 @@ spec:
       securityContext:
         runAsUser: 1001
       containers:
-      - image: ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:1.0
+      - image: ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:2.0
         name: app-k8s-fundamentals-frontend
         ports:
         - containerPort: 8080

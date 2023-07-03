@@ -33,7 +33,7 @@ spec:
                 - blog
       containers:
       - name: blog
-        image: ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:1.0
+        image: ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:2.0
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
@@ -65,7 +65,7 @@ spec:
               name: blog-credentials
         volumeMounts:
         - name: media
-          mountPath: "/opt/app-root/src/media"
+          mountPath: "/opt/app-root/media"
       volumes:
       - name: media
         persistentVolumeClaim:

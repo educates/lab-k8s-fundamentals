@@ -31,5 +31,5 @@ jobs:
         with:
           context: projects/frontend
           platforms: linux/amd64
-          tags: ghcr.io/${{github.repository}}-frontend:1.0
+          tags: ghcr.io/${{github.repository}}-frontend:2.0
           push: true

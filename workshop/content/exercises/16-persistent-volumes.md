@@ -59,10 +59,10 @@ At `spec.template.spec.containers.volumeMounts`, we neeed to add:
 ```
         volumeMounts:
         - name: media
-          mountPath: "/opt/app-root/src/media"
+          mountPath: "/opt/app-root/media"
 ```
 
-This indicates that the persistent volume should be mounted at the path `/opt/app-root/src/media` in the container.
+This indicates that the persistent volume should be mounted at the path `/opt/app-root/media` in the container.
 
 To see the updated `deployment` configuration run:
 
