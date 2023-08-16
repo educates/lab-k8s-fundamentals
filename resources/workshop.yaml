@@ -6,7 +6,7 @@ spec:
   title: Kubernetes Fundamentals
   description: An interactive workshop on Kubernetes fundamentals.
   publish:
-    image: $(image_repository)/lab-hugo-workshop-files:$(workshop_version)
+    image: $(image_repository)/lab-k8s-fundamentals-files:$(workshop_version)
     files:
       directory:
         path: .
