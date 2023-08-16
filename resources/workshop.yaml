@@ -5,10 +5,19 @@ metadata:
 spec:
   title: Kubernetes Fundamentals
   description: An interactive workshop on Kubernetes fundamentals.
+  publish:
+    image: $(image_repository)/lab-hugo-workshop-files:$(workshop_version)
+    files:
+      directory:
+        path: .
+      includePaths:
+      - /workshop/**
+      - /templates/**
+      - /README.md
   workshop:
     files:
     - image:
-        url: $(image_repository)/lab-k8s-fundamentals-files:latest
+        url: $(image_repository)/lab-k8s-fundamentals-files:$(workshop_version)
       includePaths:
       - /workshop/**
       - /templates/**
