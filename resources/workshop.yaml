@@ -8,7 +8,7 @@ spec:
   publish:
     image: $(image_repository)/lab-k8s-fundamentals-files:$(workshop_version)
     files:
-      directory:
+    - directory:
         path: .
       includePaths:
       - /workshop/**
