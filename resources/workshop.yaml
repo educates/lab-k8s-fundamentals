@@ -33,6 +33,8 @@ spec:
         layout: split
       console:
         enabled: true
+      editor:
+        enabled: true
       slides:
         enabled: true
         reveal.js:
