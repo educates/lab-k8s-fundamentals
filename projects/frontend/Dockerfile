@@ -1,4 +1,4 @@
-FROM getwarped/warp0-debian10-python37:latest
+FROM getwarped/warp0-debian10-python38:latest
 
 COPY --chown=1001:0 . /opt/app-root/src
 

@@ -33,7 +33,7 @@ spec:
                 - blog
       containers:
       - name: blog
-        image: ghcr.io/vmware-tanzu-labs/lab-k8s-fundamentals-frontend:2.0
+        image: ghcr.io/educates/lab-k8s-fundamentals-frontend:2.0
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
