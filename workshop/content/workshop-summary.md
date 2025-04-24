@@ -4,9 +4,9 @@ For general information on Kubernetes see:
 
 * https://kubernetes.io/
 
-If you want to try Kubernetes on your own computer, see Tanzu Community Edition:
+If you want to try Kubernetes on your own computer, try Kind:
 
-* https://tanzucommunityedition.io/docs/latest/getting-started-unmanaged/
+* https://kind.sigs.k8s.io/
 
 or Minikube:
 
