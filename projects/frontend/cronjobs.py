@@ -5,7 +5,7 @@ import time
 import os
 
 def hourly():
-    os.system('warpdrive exec .warpdrive/jobs/hourly/clearsessions')
+    os.system('just clear-sessions')
 
 schedule.every().hour.do(hourly)
 

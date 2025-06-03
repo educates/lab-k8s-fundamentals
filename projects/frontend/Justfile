@@ -1,0 +1,24 @@
+default:
+    @just --list
+
+build-app:
+    uv sync
+    uv run python manage.py collectstatic --noinput
+
+build-image:
+    docker build -t frontend .
+
+setup-app:
+    uv run python manage.py createsuperuser
+    uv run python manage.py loaddata posts.json
+
+clear-sessions:
+    uv run python manage.py clearsessions
+
+migrate-app:
+    uv run python manage.py migrate --noinput
+
+start-app:
+    mkdir -p data data/media
+    uv run python manage.py migrate --noinput
+    uv run ./app.sh

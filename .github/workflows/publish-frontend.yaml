@@ -12,7 +12,12 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-  
+
+      - name: Calculate variables
+        run: |
+          REPOSITORY=${{ github.repository }}
+          echo "REPOSITORY=${REPOSITORY,,}" >> $GITHUB_ENV
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -30,6 +35,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: projects/frontend
-          platforms: linux/amd64
-          tags: ghcr.io/${{github.repository}}-frontend:2.0
+          platforms: linux/amd64,linux/arm64
+          tags: ghcr.io/${{ env.REPOSITORY }}-frontend:3.0
           push: true

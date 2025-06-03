@@ -1,5 +1,0 @@
-#!/bin/bash
-
-echo " -----> Running Django database table migrations."
-
-python manage.py migrate --noinput

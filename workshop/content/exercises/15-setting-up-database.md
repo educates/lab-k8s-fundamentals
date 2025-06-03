@@ -19,7 +19,7 @@ kubectl exec -it $POD -- bash
 To setup an administrator password run:
 
 ```execute
-warpdrive setup
+just setup-app
 ```
 
 This will ensure that the database has been initialised and then prompt for the user information. Enter a user name for the administrator:
