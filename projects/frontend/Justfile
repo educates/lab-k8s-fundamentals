@@ -15,10 +15,15 @@ setup-app:
 clear-sessions:
     uv run python manage.py clearsessions
 
+media-dir:
+    mkdir -p data data/media
+
 migrate-app:
     uv run python manage.py migrate --noinput
 
-start-app:
-    mkdir -p data data/media
-    uv run python manage.py migrate --noinput
-    uv run ./app.sh
+start-app: media-dir migrate-app
+    #!/bin/bash
+    trap 'kill 0' SIGTERM SIGINT
+    echo "Starting application"
+    uv run ./app.sh &
+    wait
