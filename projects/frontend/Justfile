@@ -6,7 +6,10 @@ build-app:
     uv run python manage.py collectstatic --noinput
 
 build-image:
-    docker build -t frontend .
+    docker build -t localhost:5001/lab-k8s-fundamentals-frontend:latest .
+
+push-image: build-image
+    docker push localhost:5001/lab-k8s-fundamentals-frontend:latest
 
 setup-app:
     uv run python manage.py createsuperuser
@@ -15,11 +18,8 @@ setup-app:
 clear-sessions:
     uv run python manage.py clearsessions
 
-media-dir:
-    mkdir -p data data/media
-
 migrate-app:
     uv run python manage.py migrate --noinput
 
-start-app: media-dir migrate-app
-    uv run ./app.sh
+start-app:
+    ./start-app.sh

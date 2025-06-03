@@ -2,8 +2,11 @@
 
 set -x
 
-PORT=${PORT:-8080}
-SSL_PORT=${SSL_PORT:-8443}
+if [ -d /opt/app-root/data ]; then
+    DATA_DIR=/opt/app-root/data
+else
+    DATA_DIR=data
+fi
 
 if [ -d /opt/app-root/media ]; then
     MEDIA_DIR=/opt/app-root/media
@@ -13,6 +16,14 @@ else
     MEDIA_DIR=data/media
 fi
 
+mkdir -p $DATA_DIR
+mkdir -p $MEDIA_DIR
+
+uv run python manage.py migrate --noinput
+
+PORT=${PORT:-8080}
+SSL_PORT=${SSL_PORT:-8443}
+
 ARGS=""
 
 ARGS="$ARGS --log-to-terminal"
@@ -20,9 +31,9 @@ ARGS="$ARGS --port $PORT"
 ARGS="$ARGS --document-root htdocs"
 ARGS="$ARGS --url-alias /media $MEDIA_DIR"
 
-if [ -f /opt/app-root/cert/tls.key ]; then
+if [ -f cert/tls.key ]; then
     ARGS="$ARGS --ssl-port $SSL_PORT"
-    ARGS="$ARGS --ssl-certificate /opt/app-root/cert/tls"
+    ARGS="$ARGS --ssl-certificate cert/tls"
 
     NAMESPACE=`cat /var/run/secrets/kubernetes.io/serviceaccount/namespace`
     SERVICE=`echo $HOSTNAME | sed -e 's/^\(.*\)-[0-9]*-[a-z0-9]*$/\1/'`
