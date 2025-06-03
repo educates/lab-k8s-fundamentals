@@ -34,6 +34,6 @@ COPY --chown=1001:0 ./ /opt/app-root
 
 RUN just build-app
 
-CMD [ "just", "start-app" ]
+CMD [ "uv", "run", "./app.sh" ]
 
 EXPOSE 8080

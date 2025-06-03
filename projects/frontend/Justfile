@@ -22,8 +22,4 @@ migrate-app:
     uv run python manage.py migrate --noinput
 
 start-app: media-dir migrate-app
-    #!/bin/bash
-    trap 'kill 0' SIGTERM SIGINT
-    echo "Starting application"
-    uv run ./app.sh &
-    wait
+    uv run ./app.sh
