@@ -1,3 +1,7 @@
+---
+title: Querying the Resources
+---
+
 The web console for a Kubernetes cluster can be used to display a visual representation, in your browser, of what resources have been created and the relationship between them, but most developers will interact with a Kubernetes cluster from the command line using `kubectl`.
 
 To see a list of all the deployments in the current namespace which have already been created, run:

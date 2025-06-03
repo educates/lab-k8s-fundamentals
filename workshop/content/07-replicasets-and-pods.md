@@ -1,3 +1,7 @@
+---
+title: Replicasets and Pods
+---
+
 Having created the `deployment` run:
 
 ```execute

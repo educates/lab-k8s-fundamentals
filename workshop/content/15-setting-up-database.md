@@ -1,3 +1,7 @@
+---
+title: Setting up Database
+---
+
 For the front end web application being used, the database will be initialised if required when the application first starts up. What hasn't yet been done is to setup an administrator password for the front end web application itself. You might also want to load in some initial data, such as some posts for our blog site.
 
 To do this we need to execute some commands within the running container for one of the instances of the front end web application.
@@ -57,7 +61,7 @@ exit
 You should now be able to visit the blog site at:
 
 ```dashboard:open-url
-url: http://blog-{{session_namespace}}.{{ingress_domain}}
+url: http://blog-{{< param session_namespace >}}.{{< param ingress_domain >}}
 ```
 
 and see the posts.

@@ -1,3 +1,7 @@
+---
+title: Application Logging
+---
+
 Each instance of an application runs in it's own `pod`.
 
 As you have already seen, you can list the `pods` for the front end web application using:

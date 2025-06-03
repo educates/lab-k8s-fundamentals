@@ -1,3 +1,7 @@
+---
+title: Persistent Volumes
+---
+
 One of the resources associated with the database was a persistent volume. We also need a persistent volume for the front end web application. This is required because although the blog post content is stored in the database, any image attached to the post is stored in the file system. As the container file system is ephemeral, the images would be lost when a `pod` is killed. The container file system is also not shared between the multiple instances of the application.
 
 To add persistent storage to an application, the first step is that you need to create a persistent volume claim. This tells Kubernetes that you need storage, how big the volume needs to be and what type of storage is required.

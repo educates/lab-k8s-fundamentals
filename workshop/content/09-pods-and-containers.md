@@ -1,3 +1,7 @@
+---
+title: Pods and Containers
+---
+
 It has already been mentioned that a `pod` represents an instance of your application.
 
 To be more precise, a `pod` is an abstraction which represents a group of running containers, where the containers are to be managed and scaled as a unit.

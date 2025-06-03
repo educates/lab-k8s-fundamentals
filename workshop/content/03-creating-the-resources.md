@@ -1,3 +1,7 @@
+---
+title: Creating the Resources
+---
+
 By doing a dry run deployment, you have seen the resources that will be created. To actually deploy the database component, now run:
 
 ```execute
@@ -51,7 +55,7 @@ Notice that an `ingress` object is created for the front end web application. Th
 In this example, the URL for accessing the web application will be:
 
 ```dashboard:open-url
-url: http://blog-{{session_namespace}}.{{ingress_domain}}
+url: http://blog-{{< param session_namespace >}}.{{< param ingress_domain >}}
 ```
 
 Visit the front end web application by clicking on this link. If it shows as not being available, keep refreshing the page until it is. This is necessary as it may take a few moments to reconfigure the ingress routing layer.

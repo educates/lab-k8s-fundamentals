@@ -1,3 +1,7 @@
+---
+title: Service Networking
+---
+
 The `pod` corresponding to each instance of your application is ephemeral. If it dies it is not resurrected. The `replicaset` ensures that a `pod` that has died is replaced with a new instance, as well as ensuring the correct number of `pods` exist when scaling the number of replicas up or down. When a new `pod` is created, it will always have a new name.
 
 Each `pod`, as well as having a unique name, is also assigned it's own IP address. You can see the IP addresses assigned to each `pod` by running:
@@ -100,15 +104,15 @@ For an application running in the same namespace, an un-qualifed hostname can be
 For the front end web application you have deployed, the URL for accessing it would be:
 
 ```
-http://blog.{{session_namespace}}.svc.cluster.local:8080
+http://blog.{{< param session_namespace >}}.svc.cluster.local:8080
 ```
 
-where `{{session_namespace}}` is the subdomain added for the namespace.
+where `{{< param session_namespace >}}` is the subdomain added for the namespace.
 
 You can test it works by running:
 
 ```execute
-curl http://blog.{{session_namespace}}.svc.cluster.local:8080
+curl http://blog.{{< param session_namespace >}}.svc.cluster.local:8080
 ```
 
 Note that this still isn't accessible outside of the Kubernetes cluster, extra steps are required to expose a `service` outside of the cluster. The `curl` command only works because the terminal you are using is running as a `pod` in the same Kubernetes cluster.

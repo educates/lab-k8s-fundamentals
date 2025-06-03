@@ -1,3 +1,7 @@
+---
+title: Deployment Resource
+---
+
 As already highlighted, a key resource created when deploying an application is the `deployment` resource. It specifies the name of the container image to be deployed for an application, how many instances should be started, and the strategy for how the deployment should be managed.
 
 To view the `deployment` resource used for the front end web application, run:

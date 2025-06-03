@@ -1,3 +1,7 @@
+---
+title: Replicas and Scaling
+---
+
 One example of updating the `deployment` is to change the number of replicas, or instances of your application which are running. To effect this change you would need to change the value of `spec.replicas` in the `deployment`.
 
 The `kubectl` command provides an imperative command for updating the number of replicas. To increase the number of replicas to 3, run:
