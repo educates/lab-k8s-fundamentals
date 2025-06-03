@@ -76,4 +76,4 @@ if [ x"$BLOG_ENABLE_CRON_JOBS" != x"" ]; then
     ARGS="$ARGS --service-script cronjobs cronjobs.py"
 fi
 
-exec python manage.py runmodwsgi $ARGS
+exec uv run python manage.py runmodwsgi $ARGS
