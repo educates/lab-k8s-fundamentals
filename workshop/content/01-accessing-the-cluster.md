@@ -17,8 +17,9 @@ Did you type the command in yourself? If you did, click on the command instead a
 When run, you should see output similar to:
 
 ```
-Client Version: version.Info{Major:"1", Minor:"21", GitVersion:"v1.21.10", GitCommit:"a7a32748b5c60445c4c7ee904caf01b91f2dbb71", GitTreeState:"clean", BuildDate:"2022-02-16T11:24:04Z", GoVersion:"go1.16.14", Compiler:"gc", Platform:"linux/amd64"}
-Server Version: version.Info{Major:"1", Minor:"21", GitVersion:"v1.21.1", GitCommit:"5e58841cce77d4bc13713ad2b91fa0d961e69192", GitTreeState:"clean", BuildDate:"2021-05-21T23:01:33Z", GoVersion:"go1.16.4", Compiler:"gc", Platform:"linux/amd64"}
+Client Version: v1.32.2
+Kustomize Version: v5.5.0
+Server Version: v1.32.2
 ```
 
 The version of Kubernetes being used may be different to the version shown here.
