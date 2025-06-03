@@ -12,7 +12,7 @@ Before continuing, verify that the `kubectl` command runs and the workshop envir
 kubectl version
 ```
 
-Did you type the command in yourself? If you did, click on the command here instead and you will find that it is executed for you. You can click on any command block here in the workshop notes which has the <span class="fas fa-running"></span> icon shown to the right of it, and it will be copied to the interactive terminal and run for you. Other action blocks may also be used in this workshop, showing different icons, you can also click on these to trigger the action described.
+Did you type the command in yourself? If you did, click on the command instead and you will find that it is executed for you. You can click on any similar command block in the workshop notes and it will be copied to the interactive terminal and run for you. Other action blocks may also be used in this workshop which will similarly perform the action described when clicked on.
 
 When run, you should see output similar to:
 
