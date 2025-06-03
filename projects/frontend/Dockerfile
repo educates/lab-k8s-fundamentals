@@ -19,7 +19,7 @@ RUN INSTALL_PKGS=" \
     mkdir -p /opt/app-root/src && \
     chown -R 1001:0 /opt/app-root
 
-WORKDIR /opt/app-root/src
+WORKDIR /opt/app-root
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONIOENCODING=UTF-8 \
