@@ -17,9 +17,9 @@ Did you type the command in yourself? If you did, click on the command instead a
 When run, you should see output similar to:
 
 ```
-Client Version: v1.32.2
-Kustomize Version: v5.5.0
-Server Version: v1.32.2
+Client Version: v1.34.2
+Kustomize Version: v5.7.1
+Server Version: v1.34.3
 ```
 
 The version of Kubernetes being used may be different to the version shown here.
